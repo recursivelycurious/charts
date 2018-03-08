@@ -3,7 +3,7 @@ sudo: required
 
 env:
   global:
-    - HELM_VERSION="v2.8.1"
+    - HELM_VERSION="v2.7.2"
 
 install:
   - curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
