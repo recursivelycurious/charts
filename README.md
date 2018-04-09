@@ -1,6 +1,6 @@
 # F5 Networks Helm Charts
 
-This repository contains [helm](https://helm.sh/) for use with [F5 Networks](https://f5.com/) products and services within a [Kubernetes](https://kubernetes.io/) or [OpenShift](https://www.openshift.com/) environment.
+This repository contains [helm](https://docs.helm.sh/using_helm/#using) charts for use with some [F5 Networks](https://f5.com/) products and services within a [Kubernetes](https://kubernetes.io/) or [OpenShift](https://www.openshift.com/) environment.
 
 **Note** that charts may require access to `kube-system` namespace and/or cluster wide permissions to function as expected, so be sure to install/configure helm/tiller appropriately.
 
@@ -21,3 +21,7 @@ To access additional charts in beta:
 ```
 helm repo add f5-incubator https://f5networks.github.io/charts/incubator
 ```
+
+## Documentation
+
+Each chart contains its own `README.md` and the `values.yaml` file includes notes on default values and links to the core documentation for the resources each chart is deploying.
