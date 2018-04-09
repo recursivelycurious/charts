@@ -1,17 +1,28 @@
+# For additional information on installing the k8-bigip-ctlr please see:
+# Kubernetes: http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-app-install.html
+# OpenShift: http://clouddocs.f5.com/containers/latest/openshift/kctlr-openshift-app-install.html#install-kctlr-openshift
+#
+# access / permissions / RBAC
+# To create a secret using kubectl see 
+# http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-secrets.html#secret-bigip-login
+bigip_login_secret: f5-bigip-ctlr-login
 serviceaccount: f5-bigip-ctlr-serviceaccount
+# This namespace is where the controller lives;
 namespace: kube-system
+args:
+  # The admin IP address for your BIG-IP
+  bigip_url: ~
+  partition: f5-bigip-ctlr
+  # For the incubator chart this is set at a high level
+  log_level: DEBUG
+  verify_interval: 2
+  node_poll_interval: 1
 image:
+  # For the incubator chart this is the development image
   user: f5networksdevel
   repo: k8s-bigip-ctlr
   tag: devel-master
   pullPolicy: Always
-args:
-  log_level: DEBUG
-  partition: f5-bigip-ctlr
-  bigip_url: ~
-  verify_interval: 2
-  node_poll_interval: 1
-bigip_login_secret: f5-bigip-ctlr-login
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
