@@ -9,7 +9,7 @@ The chart presumes:
 - You have the k8s-bigip-ctlr already running in your cluster. You can use a separate chart - the [f5-bigip-ctlr chart](https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ctlr) - to deploy the controller, or you can deploy it [manually](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-app-install.html). 
 - The services accepting traffic from the ingress are configured separately.
 
-> Note - This chart and the f5-bigip-controller chart can be used separately, in conjunction, or combined as subcharts in charts you or your organization author.
+> Note - This chart and the [f5-bigip-controller](https://github.com/recursivelycurious/charts/tree/wip/src/incubator/f5-bigip-ctlr) chart can be used independently or together. If you or your organization author your own charts either or both may be used as a subchart.
 >
 > Similarly, this ingress chart can be combined -- either as a parent chart or a subchart -- with charts that define the services accepting traffic.
 

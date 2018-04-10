@@ -24,12 +24,12 @@ spec:
           - name: BIGIP_USERNAME
             valueFrom:
               secretKeyRef:
-                name: {{ .Values.bigip_login_secret }}
+                name: {{ .Values.bigip-login-secret }}
                 key: username
           - name: BIGIP_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: {{ .Values.bigip_login_secret }}
+                name: {{ .Values.bigip-login-secret }}
                 key: password
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         command:

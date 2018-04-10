@@ -39,13 +39,13 @@ helm install --set args.bigip_url=1.2.3.4 charts/src/incubator/f5-bigip-ctlr
 
 Parameter | Description | Default
 ----------|-------------|--------
-bigip_login_secret | Secret that contains BIG-IP login credentials | f5-bigip-ctlr-login
+bigip-login-secret | Secret that contains BIG-IP login credentials | f5-bigip-ctlr-login
 serviceaccount | name of ServiceAccount the ctlr should use | f5-bigip-ctlr-serviceaccount
-args.bigip_url | The admin IP for your BIG-IP | **Required**, no default
+args.bigip-url | The admin IP for your BIG-IP | **Required**, no default
 args.partition | BIG-IP partition the ctlr is to manage | f5-bigip-ctlr
-args.log_level | Log detail | DEBUG for incubation chart
-args.verify_interval | Interval in seconds to verify BIG-IP | 2 for incubation
-args.node_poll_interval | Interval in seconds to poll the cluster | 1 for incubation
+args.log-level | Log detail | DEBUG for incubation chart
+args.verify-interval | Interval in seconds to verify BIG-IP | 2 for incubation
+args.node-poll-interval | Interval in seconds to poll the cluster | 1 for incubation
 
 See the Controller documentation for a full list of [configuration parameters](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/v1.4/#controller-configuration-parameters).
 
