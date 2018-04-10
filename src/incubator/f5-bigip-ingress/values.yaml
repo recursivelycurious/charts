@@ -1,5 +1,9 @@
 # Values template for f5-bigip-ingress
 # Suggested use is to copy, specify values, and pass with `-f` to helm install
+# Additional information on using the k8s-bigip-ctlr as an ingress controller
+# within Kubernetes/Openshift can be found at
+# http://clouddocs.f5.com/containers/v2/kubernetes/kctlr-ingress.html
+#
 ingress:
   namespace: ~
   annotations:
@@ -24,6 +28,8 @@ ingress:
           "timeout":  10
         }
       ]
+# See examples for more complicated backend configurations in 
+# https://github.com/F5Networks/charts/tree/master/example_values/f5-bigip-ingress
   spec:
     backend:
       serviceName: ~

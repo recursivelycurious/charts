@@ -9,7 +9,11 @@ The chart presumes:
 - A partition (other than common) exists on your BIG-IP for the instance of the controller to manage.
 - A secret exists in your cluster to access the BIG-IP.
 
-The default values for the partition and secret to access the BIG-IP -- `f5-bigip-ctlr` and `f5-bigip-ctlr-login` can be updated using either `--set <param>=<value>` or `-f <values-file.yaml>`. See [customizing the chart before installing](https://docs.helm.sh/using_helm/#customizing-the-chart-before-installing) for more details.
+The default values for the partition and the secret to access the BIG-IP are:
+- `f5-bigip-ctlr` and 
+- `f5-bigip-ctlr-login` 
+
+These values can be easily updated using either `--set <param>=<value>` or `-f <values-file.yaml>`. See [customizing the chart before installing](https://docs.helm.sh/using_helm/#customizing-the-chart-before-installing) for more details.
 
 ## Chart Details
 
