@@ -6,10 +6,10 @@ This chart simplifies deployment of the [F5 BIG IP Controller for Kubernetes](ht
 
 The chart presumes:
 - You have added a BIG-IP device to either your [Kubernetes](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-use-bigip-k8s.html) or [OpenShift](http://clouddocs.f5.com/containers/v2/openshift/kctlr-use-bigip-openshift.html) cluster.
-- A partition exists on your BIG-IP for the instance of the controller to manage.
+- A partition (other than common) exists on your BIG-IP for the instance of the controller to manage.
 - A secret exists in your cluster to access the BIG-IP.
 
-The default values of `f5-bigip-ctlr` for the partition and `f5-bigip-ctlr-login` for the secret can be modified using `--set` or by passing your own values file.
+The default values for the partition and secret to access the BIG-IP -- `f5-bigip-ctlr` and `f5-bigip-ctlr-login` can be updated using either `--set <param>=<value>` or `-f <values-file.yaml>`. See [customizing the chart before installing](https://docs.helm.sh/using_helm/#customizing-the-chart-before-installing) for more details.
 
 ## Chart Details
 
@@ -31,11 +31,7 @@ Or
 helm install --set args.bigip_url=1.2.3.4 charts/src/incubator/f5-bigip-ctlr
 ```
 
-## Configuration
-
-See the Controller documentation for a full list of [configuration parameters](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/v1.4/#controller-configuration-parameters).
-
-### Current chart parameters:
+## Chart parameters:
 
 Parameter | Description | Default
 ----------|-------------|--------
@@ -46,6 +42,8 @@ args.partition | BIG-IP partition the ctlr is to manage | f5-bigip-ctlr
 args.log_level | Log detail | DEBUG for incubation chart
 args.verify_interval | Interval in seconds to verify BIG-IP | 2 for incubation
 args.node_poll_interval | Interval in seconds to poll the cluster | 1 for incubation
+
+See the Controller documentation for a full list of [configuration parameters](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/v1.4/#controller-configuration-parameters).
 
 If you have a specific use case for F5 products in the kubernetes environment that would benefit from a curated chart, please [open an issue](https://github.com/F5Networks/charts/issues) describing your use case and providing example resources.
 
