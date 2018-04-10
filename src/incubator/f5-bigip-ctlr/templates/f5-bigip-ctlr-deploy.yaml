@@ -35,17 +35,11 @@ spec:
         command:
         - /app/bin/k8s-bigip-ctlr
         args:
-        - --log-level
-        - {{ .Values.args.log_level }}
-        - --bigip-partition
-        - {{ .Values.args.partition }}
-        - --bigip-url
-        - {{required "BigIP url not specified - add to Values or pass with `--set` " .Values.args.bigip_url }}
         - --bigip-username
         - $(BIGIP_USERNAME)
         - --bigip-password
         - $(BIGIP_PASSWORD)
-        - --verify-interval
-        - {{ .Values.args.verify_interval | quote }}
-        - --node-poll-interval
-        - {{ .Values.args.node_poll_interval | quote }}
+        {{- range $key, $value := .Values.args }}
+        - --{{ $key }}
+        - {{ $value | quote }}
+        {{- end }}

@@ -10,13 +10,29 @@ serviceaccount: f5-bigip-ctlr-serviceaccount
 # This namespace is where the controller lives;
 namespace: kube-system
 args:
-  # The admin IP address for your BIG-IP
-  bigip_url: ~
-  partition: f5-bigip-ctlr
-  # For the incubator chart this is set at a high level
-  log_level: DEBUG
-  verify_interval: 2
-  node_poll_interval: 1
+  # See http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#controller-configuration-parameters
+  # REQUIRED Params
+  bigip-url: ~
+  bigip-partition: f5-bigip-ctlr
+  verify-interval: 2
+  node-poll-interval: 1
+  # OPTIONAL PARAMS
+  log-level: DEBUG
+  # python-basedir: ~
+  # VXLAN
+  # openshift-sdn-name:
+  # flannel-name:
+  # KUBERNETES
+  # default-ingress-ip:
+  # kubeconfig:
+  # namespace:
+  # namespace-label:
+  # node-label-selector:
+  # pool-member-type:
+  # resolve-ingress-names:
+  # running-in-cluster:
+  # use-node-internal:
+  # use-secrets:  
 image:
   # For the incubator chart this is the development image
   user: f5networksdevel
@@ -24,9 +40,7 @@ image:
   tag: devel-master
   pullPolicy: Always
 resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # If you want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   # limits:
   #  cpu: 100m
