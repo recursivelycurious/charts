@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Deploy the F5 Networks k8s-bigip-ctlr for using the BIG-IP in a Kubernetes or OpenShift environment
+name: f5-bigip-ctlr
+version: 0.0.3
