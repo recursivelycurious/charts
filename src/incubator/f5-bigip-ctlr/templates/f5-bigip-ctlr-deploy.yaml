@@ -24,12 +24,12 @@ spec:
           - name: BIGIP_USERNAME
             valueFrom:
               secretKeyRef:
-                name: {{ .Values.bigip-login-secret }}
+                name: {{ .Values.bigip_login_secret }}
                 key: username
           - name: BIGIP_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: {{ .Values.bigip-login-secret }}
+                name: {{ .Values.bigip_login_secret }}
                 key: password
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         command:
@@ -40,6 +40,6 @@ spec:
         - --bigip-password
         - $(BIGIP_PASSWORD)
         {{- range $key, $value := .Values.args }}
-        - --{{ $key }}
+        - --{{ $key | replace "_" "-"}}
         - {{ $value | quote }}
         {{- end }}

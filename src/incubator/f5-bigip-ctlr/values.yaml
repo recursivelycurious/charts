@@ -5,34 +5,36 @@
 # access / permissions / RBAC
 # To create a secret using kubectl see 
 # http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-secrets.html#secret-bigip-login
-bigip-login-secret: f5-bigip-ctlr-login
+bigip_login_secret: f5-bigip-ctlr-login
 serviceaccount: f5-bigip-ctlr-serviceaccount
 # This namespace is where the controller lives;
 namespace: kube-system
 args:
   # See http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#controller-configuration-parameters
+  # NOTE: helm has difficulty with values using `-`; `_` are used for nameing
+  # and are replaced with `-` during rendering.
   # REQUIRED Params
-  bigip-url: ~
-  bigip-partition: f5-bigip-ctlr
-  verify-interval: 2
-  node-poll-interval: 1
+  bigip_url: ~
+  bigip_partition: f5-bigip-ctlr
+  verify_interval: 2
+  node-poll_interval: 1
   # OPTIONAL PARAMS
-  log-level: DEBUG
-  # python-basedir: ~
+  log_level: DEBUG
+  # python_basedir: ~
   # VXLAN
-  # openshift-sdn-name:
-  # flannel-name:
+  # openshift_sdn_name:
+  # flannel_name:
   # KUBERNETES
-  # default-ingress-ip:
+  # default_ingress_ip:
   # kubeconfig:
   # namespace:
-  # namespace-label:
-  # node-label-selector:
-  # pool-member-type:
-  # resolve-ingress-names:
-  # running-in-cluster:
-  # use-node-internal:
-  # use-secrets:  
+  # namespace_label:
+  # node_label_selector:
+  # pool_member_type:
+  # resolve_ingress_names:
+  # running_in_cluster:
+  # use_node_internal:
+  # use_secrets:  
 image:
   # For the incubator chart this is the development image
   user: f5networksdevel
