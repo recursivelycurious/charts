@@ -1,3 +1,10 @@
+{{- if or (not .Values.args.bigip_url) (not .Values.args.bigip_partition) }}
+{{/*
+Generate errors for missing required values.
+*/}}
+# {{required "BIG-IP url not specified - add to Values or pass with `--set` " .Values.args.bigip_url }}
+# {{required "BIG-IP partition not specified - add to Values or pass with `--set` " .Values.args.partition }}
+{{- else -}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -43,3 +50,4 @@ spec:
         - --{{ $key | replace "_" "-"}}
         - {{ $value | quote }}
         {{- end }}
+{{- end }}
