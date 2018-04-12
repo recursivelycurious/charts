@@ -35,7 +35,7 @@ helm install --set args.bigip_url=1.2.3.4 charts/src/incubator/f5-bigip-ctlr
 
 ## Chart parameters:
 
-> **note** Helm value names cannot include the character `-`, so parameter names in `values.yaml` use `_` and then replace them with `-` when rendering.
+> **Note:** Helm value names cannot include the character `-` which is commonly used in the names of parameters passed to the controller. To accomodate Helm, the parameter names in `values.yaml` use `_` and then replace them with `-` when rendering.
 > e.g. `args.bigip_url` is rendered as `bigip-url` as required by the Controler.
 
 

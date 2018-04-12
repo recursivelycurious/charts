@@ -14,7 +14,7 @@ To add the stable repo to helm:
 helm repo add f5-stable https://f5networks.github.io/charts/stable
 ```
 
-These charts are tested and documented:
+Stable Charts:
 - [f5-bigip-ctlr](https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ctlr) - Use this chart to deploy the [k8s-bigip-ctlr](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/) in Kubernetes or OpenShift.
 - [f5-bigip-ingress](https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ingress) - Use this chart to deploy Ingress resources in Kubernetes or OpenShift.
 
