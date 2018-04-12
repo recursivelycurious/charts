@@ -7,7 +7,7 @@
 # http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-secrets.html#secret-bigip-login
 bigip_login_secret: f5-bigip-ctlr-login
 serviceaccount: f5-bigip-ctlr-serviceaccount
-# This namespace is where the controller lives;
+# This namespace is where the Controller lives;
 namespace: kube-system
 args:
   # See http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#controller-configuration-parameters
@@ -18,7 +18,7 @@ args:
   bigip_partition: f5-bigip-ctlr
   verify_interval: 2
   node-poll_interval: 1
-  # OPTIONAL PARAMS
+  # OPTIONAL PARAMS -- uncomment and provide values for those you wish to use.
   log_level: DEBUG
   # python_basedir: ~
   # VXLAN

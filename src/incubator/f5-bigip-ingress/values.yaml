@@ -1,6 +1,6 @@
 # Values template for f5-bigip-ingress
 # Suggested use is to copy, specify values, and pass with `-f` to helm install
-# Additional information on using the k8s-bigip-ctlr as an ingress controller
+# Additional information on using the k8s-bigip-ctlr as an Ingress controller
 # within Kubernetes/Openshift can be found at
 # http://clouddocs.f5.com/containers/v2/kubernetes/kctlr-ingress.html
 #
