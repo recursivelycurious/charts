@@ -3,7 +3,7 @@
 Generate errors for missing required values.
 */}}
 # {{required "BIG-IP url not specified - add to Values or pass with `--set` " .Values.args.bigip_url }}
-# {{required "BIG-IP partition not specified - add to Values or pass with `--set` " .Values.args.partition }}
+# {{required "BIG-IP partition not specified - add to Values or pass with `--set` " .Values.args.bigip_partition }}
 {{- else -}}
 apiVersion: extensions/v1beta1
 kind: Deployment
