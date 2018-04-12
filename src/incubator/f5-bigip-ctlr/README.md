@@ -2,26 +2,24 @@
 
 This chart simplifies repeatable, versioned deployment of the [F5 BIG-IP Controller for Kubernetes](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/).
 
-## Requirements
+### Prerequisites
+- Add your BIG-IP device to your [Kubernetes](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-use-bigip-k8s.html) or [OpenShift](http://clouddocs.f5.com/containers/v2/openshift/kctlr-use-bigip-openshift.html) Cluster.
+- Create a partition on your BIG-IP device for the BIG-IP Controller to manage. The Controller cannot manage objects in the `/Common` partition.
+- Create a Secret containing the BIG-IP login credentials for the Controller. The Controller needs an account with administrator-level permissions to ensure full functionality.
 
-The chart presumes:
-- You have added a BIG-IP device to either your [Kubernetes](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-use-bigip-k8s.html) or [OpenShift](http://clouddocs.f5.com/containers/v2/openshift/kctlr-use-bigip-openshift.html) cluster.
-- A partition (other than common) exists on your BIG-IP for the instance of the controller to manage.
-- A secret exists in your cluster to access the BIG-IP.
-
-The default values for the partition and the secret to access the BIG-IP are:
+The chart contains the following default values for partition and Secret, respectively:
 - `f5-bigip-ctlr` and 
 - `f5-bigip-ctlr-login` 
 
-These values can be easily updated using either `--set <param>=<value>` or `-f <values-file.yaml>`. See [customizing the chart before installing](https://docs.helm.sh/using_helm/#customizing-the-chart-before-installing) for more details.
+Be sure to change these if they differ from your actual partition and Secret names, using `--set <param>=<value>` or `-f <values-file.yaml>` as appropriate. See [customizing the chart before installing](https://docs.helm.sh/using_helm/#customizing-the-chart-before-installing) for more details.
 
 ## Chart Details
 
-The chart creates a Deployment for one Pod containing the [k8s-bigip-ctlr](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/) and the supporting RBAC resources.
+The chart creates a Deployment for one Pod containing the [k8s-bigip-ctlr](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/) and its supporting RBAC resources.
 
 ## Installing the Chart
 
-If using the names in the default values;
+Run the commands shown below to install the chart using the default values.
 
 ```
 helm repo add f5-incubator https://f5networks.github.io/charts/incubator
