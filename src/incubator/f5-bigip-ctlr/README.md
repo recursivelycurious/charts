@@ -49,7 +49,7 @@ args.log_level | Log detail | DEBUG for incubation chart
 args.verify_interval | Interval in seconds to verify BIG-IP | 2 for incubation
 args.node_poll_interval | Interval in seconds to poll the cluster | 1 for incubation
 
-See the Controller documentation for a full list of [configuration parameters](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/v1.4/#controller-configuration-parameters).
+See the Controller documentation for a full list of [configuration parameters](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#controller-configuration-parameters).
 
 If you have a specific use case for F5 products in the kubernetes environment that would benefit from a curated chart, please [open an issue](https://github.com/F5Networks/charts/issues) describing your use case and providing example resources.
 
